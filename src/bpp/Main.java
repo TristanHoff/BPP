@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bpp;
+package bpp2;
 
 /**
  *
@@ -11,41 +11,37 @@ package bpp;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        Bestelling b1 = new Bestelling();
-        Bestelling b2 = new Bestelling();
-        Bestelling b3 = new Bestelling();
+    
+        Verdeling v = new Verdeling();
         
-        Doos d1 = new Doos(10);
-        Doos d2 = new Doos(10);
-        Doos d3 = new Doos(10);
-        Doos d4 = new Doos(10);
-        Doos d5 = new Doos(10);
+        //Aanmaken producten
+        Product p1 = new Product(1, 5);
+        Product p2 = new Product(2);
+        Product p3 = new Product(3);
+        Product p4 = new Product(4);
+        Product p5 = new Product(5, 5);
+        //Aanmaken van orders en dozen
+        Order o0 = new Order();
+        Order o1 = new Order();
         
-        Product p1 = new Product("appel", 2, "0012586");
-        Product p2 = new Product("meloen", 7, "0012589");
-        Product p3 = new Product("druif", 1, "0012584");
-        Product p4 = new Product("CHIEKEN", 5, "0012585");
-        Product p5 = new Product("taart", 8, "0012585");
-  
-    
-    b1.addProduct(p1);
-    b1.addProduct(p2);
-    b1.addProduct(p3);
-    b2.addProduct(p1);
-    b2.addProduct(p3);
-    b2.addProduct(p5);
-    b3.addProduct(p2);
-    b3.addProduct(p4);
-    b3.addProduct(p5);
-           
-    b1.listProducten(1);
-    b2.listProducten(2);
-    
-    b1.vulB(d1, b1);
-    
-    } 
+        
+        
+        o0.voegToe(p1);
+        o0.voegToe(p2);
+        o0.voegToe(p3);
+        o0.voegToe(p4);
+        o0.voegToe(p5);
+
+        o1.voegToe(p1);
+        o1.voegToe(p2);
+        o1.voegToe(p3);
+        
+        v.vul(o1);
+        
+        
+        Scherm s1 = new Scherm();
+        s1.setVisible(true);
+    }
 }
