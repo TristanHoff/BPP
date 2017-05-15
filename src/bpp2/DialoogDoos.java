@@ -6,6 +6,7 @@
 package bpp2;
 
 import java.awt.event.*;
+import static java.lang.Integer.parseInt;
 import javax.swing.*;
 
 
@@ -18,25 +19,34 @@ public class DialoogDoos extends JDialog implements ActionListener{
     private JLabel jlHuidigeGrootte;
     private JButton jbOK;
     private JTextField jfInvoer;
+    private int doosGrootte;
+    private boolean isOK;
     
     public  DialoogDoos(JFrame frame) {
         super(frame, true);
         
-        jlHuidigeGrootte = new JLabel("Huidige grootte");
+        jlHuidigeGrootte = new JLabel("Huidige grootte: " + doosGrootte);
         jbOK = new JButton("OK");
         jfInvoer = new JTextField(10);
         
-        
-    } 
-
+  
+    }
     
-    
-    
-   
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
-    //code   
-    } 
+    if (e.getSource() == jbOK) {
+       this.doosGrootte = parseInt(jfInvoer.getText());
+       this.isOK = true;
+    }
+    }
+    
+    public int getDoosGrootte() {
+        return doosGrootte;
+    }
+    
+    public boolean getIsOK() {
+        return isOK;
+    }
 }
