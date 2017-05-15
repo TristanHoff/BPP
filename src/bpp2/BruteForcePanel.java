@@ -77,5 +77,5 @@ public class BruteForcePanel extends JPanel {
     long getTime() {
         return time;
     }
-    
+     
 }
