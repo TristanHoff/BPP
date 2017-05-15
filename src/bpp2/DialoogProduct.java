@@ -6,6 +6,7 @@
 package bpp2;
 
 import java.awt.event.*;
+import static java.lang.Integer.parseInt;
 import javax.swing.*;
 
 
@@ -16,20 +17,42 @@ import javax.swing.*;
 public class DialoogProduct extends JDialog implements ActionListener{
 
     private JLabel jlProductNaam, jlProductGrootte, jlProduct, jlGrootte;
+    private JTextField jfInvoerGrootte, jfInvoerNaam;
+    private JButton jbVoegToe;
+    private String naam;
+    private int grootte;
+    private boolean voegToe;
     
     public  DialoogProduct(JFrame frame) {
         super(frame, true);
         
         jlProductNaam = new JLabel("Productnaam:");
         jlProductGrootte = new JLabel("Grootte:");
-        jlProduct = new JLabel();//p.getNaam()
-        jlGrootte = new JLabel();//p.getGrootte()
+        jbVoegToe = new JButton("Voeg Toe");
+        jfInvoerGrootte = new JTextField(5);
+        jfInvoerNaam = new JTextField(5);
+        jlProduct = new JLabel(naam);
+        jlGrootte = new JLabel(Integer.toString(grootte));
     } 
 
-    
-    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } 
+    if (e.getSource() == jbVoegToe) {
+        this.grootte = parseInt(jfInvoerGrootte.getText());
+        this.naam = (jfInvoerNaam.getText());
+        
+        this.voegToe = true;
+    }
+    }
+    public int getGrootte(){
+        return grootte;
+    }
+    
+    public String getNaam(){
+        return naam;
+    }
+    
+    public boolean getVoegToe(){
+        return voegToe;
+    }
 }

@@ -35,7 +35,7 @@ public class BruteForcePanel extends JPanel {
         if (scherm.getStart()) {
             long startTime = System.currentTimeMillis();
             
-            BruteForce bruteforce = new BruteForce(scherm.getProducten(), scherm.getRuimte());
+            BruteForce bruteforce = new BruteForce(scherm.getProducten(), scherm.getMaxRuimte());
         }
     }
     
