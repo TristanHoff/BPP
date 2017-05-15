@@ -9,6 +9,8 @@ import java.awt.*;
 import static java.awt.BorderLayout.EAST;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -19,6 +21,9 @@ public class Scherm extends JFrame implements ActionListener{
     private JButton jbStart, jbStop, jbProduct, jbDoos;
     private JLabel  jlBFAantalDozen, jlBFTijd, jlVerdeling;
     private JPanel  jp1, jp2, jp3, jp4, jp5, jp6;
+    private boolean start = false;
+    
+    
     
     public Scherm() {
         setTitle("Bin Packing Problem");
@@ -70,11 +75,11 @@ public class Scherm extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jbStart) {
-            //code voor Start knop
+            start = true;
         }
         
         if (e.getSource() == jbStop){
-            //code voor Stop knop
+            start = false;
         }
         
         if (e.getSource() == jbProduct){
@@ -84,5 +89,11 @@ public class Scherm extends JFrame implements ActionListener{
         if (e.getSource() == jbDoos){
             //code voor Doos knop
         }
+        repaint();
     }
+    
+    boolean getStart() {
+        return start;
+    } 
+    
 }

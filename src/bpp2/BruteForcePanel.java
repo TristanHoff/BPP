@@ -32,7 +32,11 @@ public class BruteForcePanel extends JPanel {
         g.setColor(Color.BLACK);
         g.drawRect(0,0,(int)getSize().getWidth()-1,(int)getSize().getHeight()-1);
         
-        
+        if (scherm.getStart()) {
+            long startTime = System.currentTimeMillis();
+            
+            BruteForce bruteforce = new BruteForce(scherm.getProducten(), scherm.getRuimte());
+        }
     }
     
     
