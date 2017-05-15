@@ -36,8 +36,46 @@ public class BruteForcePanel extends JPanel {
             long startTime = System.currentTimeMillis();
             
             BruteForce bruteforce = new BruteForce(scherm.getProducten(), scherm.getMaxRuimte());
+            bruteforce.getResult();
+            List<Doos> dozenBrute = bruteforce.getDozen();
+            
+            time = System.currentTimeMillis() - startTime;
+            System.out.println("Brute Force: " + time + " milliseconden");
+            
+            int yDoos = 30;
+            int xDoos = 60;
+            int yProduct = 30;
+            int xProduct = 300;
+            
+            for (int i = 1; i <=bruteforce.getBesteOplossing(); i++) {
+                g.setColor(Color.BLACK);
+                int x = 15;
+                int y = 280;
+                g.drawRect(xDoos, x + 1, yDoos, y);
+                g.drawString("Doos: " + i, yDoos + 5, y +35);
+                yDoos = yDoos + (xDoos + 25);
+            }
+            
+            for (Doos doos : dozenBrute) {
+            for (int i = 0; i < doos.getProducten().size(); i++) {
+                g.setColor(Color.BLACK);
+                g.drawRect(yProduct, xProduct+1, xDoos, 0 - (15 * doos.getProducten().get(i) +1));
+                g.setColor(Color.BLUE);
+                g.fillRect(yProduct + 1, xProduct + 1, yDoos - 1, 0 - (15*doos.getProducten().get(i) + 1));
+                g.drawString("" + doos.getProducten().get(i), yProduct + 18, xProduct + 8 + (15 * doos.getProducten().get(i) / -2));
+                
+                xProduct = xProduct - (15 * doos.getProducten().get(i));
+            }
+            yProduct = yProduct + (xDoos +25);
+            xProduct = 300;
+            }
         }
+        g.setColor(Color.BLACK);
+        g.drawString("Brute Force", 5, 15);
     }
     
+    long getTime() {
+        return time;
+    }
     
 }
