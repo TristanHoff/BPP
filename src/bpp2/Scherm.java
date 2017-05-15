@@ -17,7 +17,7 @@ import java.awt.event.*;
 public class Scherm extends JFrame implements ActionListener{
     
     private JButton jbStart, jbStop, jbProduct, jbDoos;
-    private JLabel  jlAantalDozen, jlTijd, jlAlgoritme, jlVerdeling;
+    private JLabel  jlBFAantalDozen, jlBFTijd, jlVerdeling;
     private JPanel  jp1, jp2, jp3, jp4, jp5, jp6;
     
     public Scherm() {
@@ -32,9 +32,9 @@ public class Scherm extends JFrame implements ActionListener{
         jbDoos      = new JButton("Doos");
         
         //Labels
-        jlAantalDozen = new JLabel("Aantal dozen: ");
-        jlTijd        = new JLabel("Tijd: ");
-        jlAlgoritme   = new JLabel("Algoritme: ");
+        jlBFAantalDozen = new JLabel("Aantal dozen: ");
+        jlBFTijd        = new JLabel("Tijd: ");
+        
         jlVerdeling   = new JLabel("Optimale verdeling");
         
         
@@ -61,7 +61,7 @@ public class Scherm extends JFrame implements ActionListener{
         
         jp1.setPreferredSize(new Dimension(400,695));
        
-        add(jp6);
+        add(jp6, BorderLayout.LINE_END);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
