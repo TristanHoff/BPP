@@ -24,11 +24,13 @@ public class DialoogDoos extends JDialog implements ActionListener{
     
     public  DialoogDoos(JFrame frame) {
         super(frame, true);
-        
+//        JFrame doosFrame = new JFrame("Doos");
+    
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         jlHuidigeGrootte = new JLabel("Huidige grootte: " + doosGrootte);
         jbOK = new JButton("OK");
         jfInvoer = new JTextField(10);
-        
+        setVisible(true);
   
     }
     

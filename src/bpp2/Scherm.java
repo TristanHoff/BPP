@@ -98,15 +98,14 @@ public class Scherm extends JFrame implements ActionListener{
         repaint();
     }
     
+    boolean getStart() {
+        return start;
+    }
     public ArrayList getProducten(){
         return producten;
     }
-    
-    public boolean getStart() {
-        return start;
-    } 
-    
-    public int getMaxRuimte() {
+    public int getMaxRuimte(){
         return maxRuimte;
     }
+    
 }
