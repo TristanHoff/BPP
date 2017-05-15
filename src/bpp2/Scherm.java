@@ -22,7 +22,7 @@ public class Scherm extends JFrame implements ActionListener{
     private JLabel  jlBFAantalDozen, jlBFTijd, jlVerdeling;
     private JPanel  jp1, jp2, jp3, jp4, jp5, jp6;
     private boolean start = false;
-    
+    private ArrayList<Product> producten;
     
     
     public Scherm() {
@@ -90,6 +90,10 @@ public class Scherm extends JFrame implements ActionListener{
             //code voor Doos knop
         }
         repaint();
+    }
+    
+    public ArrayList getProducten(){
+        return producten;
     }
     
     boolean getStart() {
